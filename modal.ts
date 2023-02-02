@@ -22,13 +22,9 @@ export class InsertEmoteModal extends Modal {
     new Setting(contentEl).setName("Emote Name").addText((text) =>
       text.setValue(this.linkText).onChange((value) => {
         this.linkText = value;
+        text.setPlaceholder("See `https://betterttv.com/emotes/global` for global emotes")
       })
     );
-
-    new Setting(contentEl).addTextArea((text) =>
-      text
-        .setPlaceholder("See `https://betterttv.com/emotes/global` for global emotes")
-    )
 
     new Setting(contentEl).addButton((btn) =>
       btn
