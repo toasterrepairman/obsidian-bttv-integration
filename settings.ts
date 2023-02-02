@@ -1,10 +1,10 @@
-import ExamplePlugin from "./main";
+import BttvIntegration from "./main";
 import { App, PluginSettingTab, Setting } from "obsidian";
 
 export class BttvSettingTab extends PluginSettingTab {
-  plugin: ExamplePlugin;
+  plugin: BttvIntegration;
 
-  constructor(app: App, plugin: ExamplePlugin) {
+  constructor(app: App, plugin: BttvIntegration) {
     super(app, plugin);
     this.plugin = plugin;
   }
@@ -15,8 +15,8 @@ export class BttvSettingTab extends PluginSettingTab {
     containerEl.empty();
 
     new Setting(containerEl)
-      .setName("Date format")
-      .setDesc("Default date format")
+      .setName("Emote Size")
+      .setDesc("Emote size, in pixels (equal to font).")
       .addSlider((Number) =>
         Number
             .setLimits(6, 100, 2)

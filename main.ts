@@ -34,7 +34,7 @@ export default class BttvIntegration extends Plugin {
 		
 				const onSubmit = (emote_name: string) => {
 					editor.replaceSelection(
-						`<img src="https://cdn.betterttv.net/emote/${emoteMap.get(emote_name)}/1x.png" alt="${emote_name}" height="${this.settings.emoteHeight}" />`
+						`<img src="https://cdn.betterttv.net/emote/${emoteMap.get(emote_name)}/2x.png" alt="${emote_name}" height="${this.settings.emoteHeight}" />`
 					);
 				};
 		

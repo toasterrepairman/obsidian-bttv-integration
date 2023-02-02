@@ -1,4 +1,5 @@
 import { App, Modal, Setting } from "obsidian";
+import { text } from "stream/consumers";
 
 export class InsertEmoteModal extends Modal {
   linkText: string;
@@ -16,13 +17,18 @@ export class InsertEmoteModal extends Modal {
   onOpen() {
     const { contentEl } = this;
 
-    contentEl.createEl("h1", { text: "Insert link" });
+    contentEl.createEl("h1", { text: "Insert Emote" });
 
-    new Setting(contentEl).setName("Link text").addText((text) =>
+    new Setting(contentEl).setName("Emote Name").addText((text) =>
       text.setValue(this.linkText).onChange((value) => {
         this.linkText = value;
       })
     );
+
+    new Setting(contentEl).addTextArea((text) =>
+      text
+        .setPlaceholder("See `https://betterttv.com/emotes/global` for global emotes")
+    )
 
     new Setting(contentEl).addButton((btn) =>
       btn
