@@ -1,5 +1,6 @@
 import BttvIntegration from "./main";
 import { App, PluginSettingTab, Setting } from "obsidian";
+import { text } from "stream/consumers";
 
 export class BttvSettingTab extends PluginSettingTab {
   plugin: BttvIntegration;
@@ -26,5 +27,18 @@ export class BttvSettingTab extends PluginSettingTab {
                 await this.plugin.saveSettings();
             }       
     ));
+    new Setting(containerEl)
+      .setName("Channels")
+      .setDesc("List of BTTV Channels to look up emotes from.")
+      .addText((text) =>
+        text
+            .setValue(this.plugin.settings.channels.toString())
+            .setPlaceholder("Comma-separated channel names")
+            .onChange(async (channels) => {
+              this.plugin.settings.channels = channels.split(', ');
+              await this.plugin.saveSettings();
+            }
+          )
+      )
   }
 }
