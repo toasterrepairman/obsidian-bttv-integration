@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "e85d29b83ad174ed",
+        "id": "8e6f1c4b57a935f1",
         "type": "tabs",
         "children": [
           {
-            "id": "29977aa9117869fa",
+            "id": "5f01e73c488b8652",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -146,6 +146,8 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "29977aa9117869fa",
-  "lastOpenFiles": []
+  "active": "5f01e73c488b8652",
+  "lastOpenFiles": [
+    "Test Page.md"
+  ]
 }
